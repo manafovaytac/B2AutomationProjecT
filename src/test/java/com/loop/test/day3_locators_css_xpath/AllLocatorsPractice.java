@@ -22,13 +22,12 @@ public class AllLocatorsPractice {
         WebElement firstName=driver.findElement(By.name("firstname"));
         firstName.sendKeys("Loop");
 
-        //this will return us 3 elements,and always will click the first one,that why we should pay attention to locate unique element
         WebElement lastName=driver.findElement(By.name("lastname"));
         lastName.sendKeys("Academy");
 
-
-
-
+        //this will return us 3 elements,and always will click the first one,that why we should pay attention to locate unique element
+        WebElement gender = driver.findElement(By.name("gender"));
+        gender.click();
 
 
 
