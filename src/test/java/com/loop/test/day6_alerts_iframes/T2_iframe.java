@@ -5,6 +5,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.testng.AssertJUnit.assertEquals;
 
 public class T2_iframe extends TestBase {
@@ -40,6 +43,15 @@ public class T2_iframe extends TestBase {
         String expected = "An iFrame containing the TinyMCE WYSIWYG Editor";
         assertEquals(actual, expected, "actual does not match expected");
 
+
+    }
+
+    @Test
+    public void amazonIFrame(){
+        driver.get("https://www.amazon.com/");
+        List<WebElement> iframes=new ArrayList<>();
+        iframes = driver.findElements(By.xpath("//iframe"));
+        System.out.println("iframe = "+iframes.size());
 
     }
 }
