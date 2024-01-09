@@ -15,9 +15,9 @@ public class TestBase {
         driver.manage().window().maximize();
     }
 
-    @AfterMethod
-    public void tearDownMethod(){
-        driver.close();
-    }
+//    @AfterMethod
+//    public void tearDownMethod(){
+//        driver.close();
+//    }
 
 }
