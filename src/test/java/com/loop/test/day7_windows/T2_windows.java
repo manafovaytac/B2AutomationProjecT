@@ -2,6 +2,7 @@ package com.loop.test.day7_windows;
 
 import com.loop.test.utilities.BrowserUtils;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import  com.loop.test.base.TestBase;
 
@@ -42,4 +43,23 @@ public class T2_windows extends TestBase {
 
         BrowserUtils.switchWindowAndValidate(driver, "facebook.com", "facebook");
     }
+
+    /**
+     * switches to the new window by the exact title
+     * return to roiginal windiw if the window with given title not found
+     * @param driver
+     * @param targetTitle
+     */
+    public  static void switchToWindow(WebDriver driver,String targetTitle) {
+            String origin = driver.getWindowHandle();
+            for (String handle : driver.getWindowHandles()){
+                driver.switchTo().window(handle);
+                if(driver.getTitle().contains(targetTitle)){
+                    return;
+                }
+            }
+            driver.switchTo().window(origin);
+    }
+
+
 }
